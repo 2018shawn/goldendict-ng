@@ -58,7 +58,7 @@ public:
   void togglePanel();
   void togglePanelOrientation();
   int totalTabCount() const;
-int panelCount() const;
+  int panelCount() const;
   void distributePanelSizes();
 
   enum class WildcardPolicy {
@@ -126,8 +126,8 @@ private:
 
   QAction escAction, focusTranslateLineAction, addTabAction, closeCurrentTabAction, closeAllTabAction,
     closeRestTabAction, switchToNextTabAction, switchToPrevTabAction, showDictBarNamesAction, toggleMenuBarAction,
-    lockPanelsAction, focusHeadwordsDlgAction, focusArticleViewAction, addAllTabToFavoritesAction,
-    togglePanelAction, togglePanelOrientationAction;
+    lockPanelsAction, focusHeadwordsDlgAction, focusArticleViewAction, addAllTabToFavoritesAction, togglePanelAction,
+    togglePanelOrientationAction;
 
   QAction useSmallIconsInToolbarsAction, useLargeIconsInToolbarsAction, useNormalIconsInToolbarsAction;
 

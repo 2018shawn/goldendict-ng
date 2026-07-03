@@ -264,7 +264,7 @@ MainWindow::MainWindow( Config::Class & cfg_ ):
   ui.centralLayout->removeWidget( ui.panelSplitter );
   ui.panelSplitter->insertWidget( 0, ui.tabWidget );
   ui.panelSplitter->setOrientation( Qt::Horizontal ); // side-by-side default
-  ui.panelSplitter->setVisible( true ); // always visible
+  ui.panelSplitter->setVisible( true );               // always visible
   ui.centralLayout->addWidget( ui.panelSplitter );
 
   // Set own gesture recognizers
@@ -510,14 +510,14 @@ MainWindow::MainWindow( Config::Class & cfg_ ):
   addAction( &addTabAction );
 
   // Panel toggle
-  togglePanelAction.setText( tr("Toggle Panel") );
+  togglePanelAction.setText( tr( "Toggle Panel" ) );
   addGlobalAction( &togglePanelAction, [ this ]() {
     togglePanel();
   } );
   togglePanelAction.setShortcut( QKeySequence( "Ctrl+Shift+P" ) );
 
   // Panel orientation toggle
-  togglePanelOrientationAction.setText( tr("Toggle Panel Orientation") );
+  togglePanelOrientationAction.setText( tr( "Toggle Panel Orientation" ) );
   addGlobalAction( &togglePanelOrientationAction, [ this ]() {
     togglePanelOrientation();
   } );
@@ -1352,7 +1352,7 @@ void MainWindow::addPanel( ArticleView * av )
   panel->setMovable( true );
   panel->setUsesScrollButtons( true );
   connect( panel, &QTabWidget::tabCloseRequested, this, [ this, panel ]( int tabIndex ) {
-    auto * w = panel->widget( tabIndex );
+    auto * w       = panel->widget( tabIndex );
     auto * avClose = qobject_cast< ArticleView * >( w );
     if ( !avClose )
       return;
@@ -1377,7 +1377,7 @@ void MainWindow::addPanel( ArticleView * av )
 void MainWindow::removePanel( ArticleView * av )
 {
   // Save title before removing from panel
-  QString title = av->windowTitle();
+  QString title            = av->windowTitle();
   QTabWidget * targetPanel = nullptr;
   for ( int i = 1; i < ui.panelSplitter->count(); i++ ) {
     auto * panel = qobject_cast< QTabWidget * >( ui.panelSplitter->widget( i ) );
@@ -1418,8 +1418,8 @@ void MainWindow::distributePanelSizes()
     ui.panelSplitter->setStretchFactor( i, 1 );
 
   // Explicit initial sizes (stretch only affects resize)
-  int total = ( ui.panelSplitter->orientation() == Qt::Horizontal )
-                ? ui.panelSplitter->width() : ui.panelSplitter->height();
+  int total =
+    ( ui.panelSplitter->orientation() == Qt::Horizontal ) ? ui.panelSplitter->width() : ui.panelSplitter->height();
   if ( total > 0 ) {
     QList< int > sizes;
     for ( int i = 0; i < count; i++ )
@@ -1437,7 +1437,7 @@ void MainWindow::togglePanel()
     return;
 
   // Find which panel (or main tab) has keyboard focus
-  QWidget * w      = QApplication::focusWidget();
+  QWidget * w               = QApplication::focusWidget();
   QTabWidget * focusedPanel = nullptr;
   while ( w && w != ui.panelSplitter ) {
     if ( auto * pt = qobject_cast< QTabWidget * >( w ) ) {
