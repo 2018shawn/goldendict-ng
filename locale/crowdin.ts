@@ -2197,17 +2197,6 @@ between classic and school orthography in cyrillic)</source>
     </message>
 </context>
 <context>
-    <name>MainTabWidget</name>
-    <message>
-        <source>Move to Panel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close Tab</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>MainWindow</name>
     <message>
         <source>&amp;File</source>
@@ -2668,6 +2657,10 @@ To find &apos;*&apos;, &apos;?&apos;, &apos;[&apos;, &apos;]&apos; symbols use &
     </message>
     <message>
         <source>Toggle Panel Orientation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move to Panel</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
